@@ -3,17 +3,558 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Webpage</title>
+    <title>Mudita's Personal Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body {
-            font-family: sans-serif;
-            text-align: center;
-            padding: 50px;
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
-<body>
-    <h1>Hello World!</h1>
-    <p>This is my first webpage hosted on GitHub Pages.</p>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-semibold flex items-center">
+                        <span class="gradient-text">MP</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#work" class="text-gray-600 hover:text-indigo-600 transition">Work</a>
+                    <a href="#experience" class="text-gray-600 hover:text-indigo-600 transition">Experience</a>
+                    <a href="#education" class="text-gray-600 hover:text-indigo-600 transition">Education</a>
+                    <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition">Contact</a>
+                    <a href="#resume" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition">Resume</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-gray-600">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-40 pt-20 px-4">
+        <div class="flex flex-col space-y-6 text-lg">
+            <a href="#work" class="border-b border-gray-100 pb-4">Work</a>
+            <a href="#experience" class="border-b border-gray-100 pb-4">Experience</a>
+            <a href="#education" class="border-b border-gray-100 pb-4">Education</a>
+            <a href="#contact" class="border-b border-gray-100 pb-4">Contact</a>
+            <a href="#resume" class="bg-indigo-600 text-white px-4 py-2 rounded-md w-max">Resume</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                        Hi, I'm <span class="gradient-text">Mudita</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-600 mb-8">
+                        Aspiring PM blending expertise in design, business, and technology to build impactful products.
+                    </h2>
+                    <p class="text-gray-500 mb-10 max-w-lg">
+                        I specialize in technology management helping teams create the next generation of AI-first products that solve real problems. With a background in design, business and technology, I bring a unique perspective to every project.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#work" class="bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition">View Work</a>
+                        <a href="#contact" class="border border-gray-300 px-6 py-3 rounded-md hover:bg-gray-50 transition">Contact Me</a>
+                    </div>
+                </div>
+                <div data-aos="fade-left" class="flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-indigo-100 rounded-full overflow-hidden flex items-center justify-center mx-auto">
+                            <img src="profile_photo.png" alt="Profile" class="w-full h-full object-cover rounded-full border-4 border-indigo-200 shadow-lg">
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-lg shadow-lg">
+                            <div class="text-indigo-600 font-bold text-xl">3+</div>
+                            <div class="text-gray-500 text-sm">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Selected Work</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    A showcase of projects I've led from initial concept to polished implementation.
+                </p>
+            </div>
+            
+            <!-- Carousel Container -->
+            <div class="relative">
+                <div id="carousel" class="flex transition-transform duration-500 ease-in-out px-12" style="overflow-x: auto; scroll-snap-type: x mandatory;">
+                    <!-- Project Cards -->
+                    <div class="min-w-[350px] max-w-sm mx-2 project-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300 scroll-snap-align-start" data-aos="fade-up">
+                        <div class="h-48 bg-gradient-to-r from-pink-400 to-yellow-300 flex items-center justify-center">
+                            <i data-feather="home" class="text-white w-16 h-16"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Homeland</h3>
+                            <p class="text-gray-500 mb-4">Built a user-centric food delivery platform connecting home chefs with
+    the local community, featuring real-time tracking, secure data handling, and personalized filtering; led Agile system design,
+    incorporating user research, functional modeling, and multi-platform prototyping to ensure scalability and reliability.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full">Product Design</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">UI/UX Design</span>
+                                <span class="bg-teal-100 text-teal-800 text-xs px-3 py-1 rounded-full">User Research</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="min-w-[350px] max-w-sm mx-2 project-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300 scroll-snap-align-start" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-48 bg-gradient-to-r from-green-400 to-teal-300 flex items-center justify-center">
+                            <i data-feather="bar-chart-2" class="text-white w-16 h-16"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Harvest Market</h3>
+                            <p class="text-gray-500 mb-4">Led a data-driven strategy project analyzing 24 years of U.S. food
+    import data in Tableau; identified high-growth categories, sourcing opportunities, and market entry points for a global grocery concept.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Business Strategy</span>
+                                <span class="bg-orange-100 text-orange-800 text-xs px-3 py-1 rounded-full">Data Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="min-w-[350px] max-w-sm mx-2 project-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300 scroll-snap-align-start" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-48 bg-gradient-to-r from-indigo-400 to-purple-400 flex items-center justify-center">
+                            <i data-feather="cpu" class="text-white w-16 h-16"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Reliabl</h3>
+                            <p class="text-gray-500 mb-4">Developed an AI-powered platform for reliable produce sourcing; led MVP scoping,
+    engineered supplier scoring algorithms, and iterated a functional prototype grounded in user needs and feasibility analysis.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">AI</span>
+                                <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Business</span>
+                                <span class="bg-lime-100 text-lime-800 text-xs px-3 py-1 rounded-full">Prototyping</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="min-w-[350px] max-w-sm mx-2 project-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300 scroll-snap-align-start" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-48 bg-gradient-to-r from-yellow-400 to-orange-400 flex items-center justify-center">
+                            <i data-feather="box" class="text-white w-16 h-16"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">WineWays</h3>
+                            <p class="text-gray-500 mb-4">Devised a business model for a subscription-based wine delivery service;
+    formulated supply chain, marketing, and operational strategies for local Spanish vineyards, with risk and financial feasibility analysis.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">Business</span>
+                                <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Prototyping</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="min-w-[350px] max-w-sm mx-2 project-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300 scroll-snap-align-start" data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-48 bg-gradient-to-r from-purple-400 to-indigo-400 flex items-center justify-center">
+                            <i data-feather="activity" class="text-white w-16 h-16"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">PawBot</h3>
+                            <p class="text-gray-500 mb-4">Designed an AI-powered mobile pet feeder robot integrating autonomous navigation, food portion
+    control, and app-based scheduling to improve pet health, convenience, and remote care for modern households.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Product Design</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">IoT</span>
+                                <span class="bg-orange-100 text-orange-800 text-xs px-3 py-1 rounded-full">Robotics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel Controls -->
+                <button id="carousel-left" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg border-2 border-indigo-200 p-3 z-20 flex items-center justify-center md:block hover:bg-indigo-50 transition">
+                    <i data-feather="chevron-left" class="w-7 h-7 text-indigo-600"></i>
+                </button>
+                <button id="carousel-right" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg border-2 border-indigo-200 p-3 z-20 flex items-center justify-center md:block hover:bg-indigo-50 transition">
+                    <i data-feather="chevron-right" class="w-7 h-7 text-indigo-600"></i>
+                </button>
+                <!-- Gradient overlays to hint at more items -->
+                <div class="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
+                <div class="pointer-events-none absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
+            </div>
+            <!-- <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-indigo-600 hover:text-indigo-800">
+                    View all projects
+                    <i data-feather="arrow-right" class="ml-2 w-4 h-4"></i>
+                </a>
+            </div> -->
+        </div>
+    </section>
+    <script>
+        // Carousel logic
+        const carousel = document.getElementById('carousel');
+        const leftBtn = document.getElementById('carousel-left');
+        const rightBtn = document.getElementById('carousel-right');
+        let scrollAmount = 0;
+        const cardWidth = 370; // Approximate width including margin
+
+        rightBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+        leftBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+
+        // Touch swipe support
+        let startX = 0;
+        carousel.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        carousel.addEventListener('touchend', (e) => {
+            let endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) {
+                carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            } else if (endX - startX > 50) {
+                carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            }
+        });
+    </script>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Professional Experience</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    My journey through design and product development.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- Experience 1 -->
+                <div class="mb-12" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                        <h3 class="text-xl font-semibold">AI Product Consultant</h3>
+                        <div class="text-indigo-600 font-medium">May 2025 - Aug 2025</div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div class="text-gray-600">Riverside Natural Foods (Home of MadeGood) </div>
+                        <div class="text-gray-500 text-sm">Chicago, IL</div>
+                    </div>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-500">
+                        <li>
+                            Designed a 12-month, 3-phase ADKAR AI adoption roadmap with actionable success metrics and flexible pacing aligned to readiness
+                        </li>
+                        <li>
+                            Drove adoption readiness by analyzing 200+ survey responses; proposed a Copilot-GPT blend for scalable AI agent deployment
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="mb-12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                        <h3 class="text-xl font-semibold">Founder</h3>
+                        <div class="text-indigo-600 font-medium">Dec 2017 - Apr 2023</div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div class="text-gray-600">Pinnacle Point Studio</div>
+                        <div class="text-gray-500 text-sm">Gurugram, India</div>
+                    </div>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-500">
+                        <li>
+                            Founded a design firm that integrated IoT & AR for bespoke interior design solutions delivering to 40+ clients across 6+ global markets
+                        </li>
+                        <li>
+                            Developed customer feedback frameworks that highlighted repeat engagement rate of 90%, improving customer satisfaction by 26%
+                        </li>
+                        <li>
+                            Streamlined resource allocation, vendor partnerships, and marketing strategies to boost operational efficiency and brand reach
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Experience 3 -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
+                        <h3 class="text-xl font-semibold">Project Manager, Business Development</h3>
+                        <div class="text-indigo-600 font-medium">Sep 2021 - Dec 2022</div>
+                    </div>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div class="text-gray-600">SIETCO W.L.L.</div>
+                        <div class="text-gray-500 text-sm">Bahrain | Saudi Arabia</div>
+                    </div>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-500">
+                        <li>
+                            Directed data-driven market research with a team of 4, driving 16% revenue growth, onboarding 10+ clients, and improving insights
+                        </li>
+                        <li>
+                            Executed a product roadmap based on stakeholder demands and market insights, increasing profit margins of product lines by 12%
+                        </li>
+                        <li>
+                            Optimized product-market fit, driving 15% sales growth in 6 months through strategic product planning and market analysis initiatives
+                        </li>
+                        <!-- <li>
+                            Led real-time KPI tracking implementation using Power BI, improving delivery timelines by 26% and enhancing decision-making
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Education</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    My academic background that shaped my product mindset.
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8 items-start">
+                    <!-- Education 1 -->
+                    <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                <i data-feather="award" class="text-indigo-600 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold">M.Sc. in Technology Management</h3>
+                                <div class="text-gray-500 text-sm">2024 - Present</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-500">
+                            Univerisity of Illinois Urbana-Champaign, Gies Business School <br><br>
+                            Specialized in Product Management and Information Technology.
+                        </p>
+                    </div>
+                    <!-- Education 2 -->
+                    <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                                <i data-feather="book" class="text-purple-600 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold">MBA in International Business </h3>
+                                <div class="text-gray-500 text-sm">2020 - 2021</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-500">
+                            EAE Business School <br><br>
+                            Concentration in business strategy and data analytics.
+                        </p>
+                    </div>
+                    <!-- Education 3 -->
+                    <div class="bg-gray-50 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i data-feather="figma" class="text-blue-600 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold">B.A.(Hons.) in Design</h3>
+                                <div class="text-gray-500 text-sm">2014 - 2017</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-500">
+                            Raffles College of Higher Education, affiliated with University of Chester, UK <br><br>
+                            Minor in Entrepreneurship.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="py-20 bg-gradient-to-r from-indigo-500 to-purple-600">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-6" data-aos="fade-up">Download My Resume</h2>
+            <p class="text-indigo-100 max-w-2xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
+                Get a comprehensive overview of my skills, experience, and education in PDF format.
+            </p>
+            <a href="https://drive.google.com/file/d/1tiOVViJd8MGtnUceGdGrF57jCsD0JH6S/view?usp=drive_link" class="inline-flex items-center bg-white text-indigo-600 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition" data-aos="fade-up" data-aos-delay="200">
+                <i data-feather="download" class="mr-2 w-5 h-5"></i>
+                Download Resume
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Get In Touch</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 p-3 rounded-lg mr-4">
+                                <i data-feather="mail" class="text-indigo-600 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700">Email</h4>
+                                <a href="mailto:muditapachisia@gmail.com" class="text-indigo-600 hover:underline">muditapachisia@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-3 rounded-lg mr-4">
+                                <i data-feather="phone" class="text-purple-600 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700">Phone</h4>
+                                <a href="tel:+14255322528" class="text-indigo-600 hover:underline">+1 (425) 532-2528</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i data-feather="map-pin" class="text-blue-600 w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700">Location</h4>
+                                <p class="text-gray-500">Chicago, IL</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold mt-12 mb-6">Follow Me</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/muditapachisia/" class="social-icon bg-gray-200 p-3 rounded-full text-gray-700 hover:bg-indigo-100 hover:text-indigo-600 transition">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://github.com/muditapachisia" class="social-icon bg-gray-200 p-3 rounded-full text-gray-700 hover:bg-gray-800 hover:text-white transition">
+                            <i data-feather="github" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Load EmailJS SDK -->
+                <script type="text/javascript"
+                        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+                </script>
+                <script type="text/javascript">
+                (function(){
+                    emailjs.init({
+                        publicKey: "jds1hbKZbyBsBIwcP",
+                    });
+                })();
+                </script>
+
+                <div data-aos="fade-left">
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition">
+                    </div>
+
+                    <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition">
+                    </div>
+
+                    <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                    <textarea id="message" name="message" rows="4" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"></textarea>
+                    </div>
+
+                    <button type="submit"
+                    class="w-full bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition">
+                    Send Message
+                    </button>
+                </form>
+                </div>
+
+                <script>
+                // Handle form submission
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    emailjs.send("service_4qaydts", "template_m6v1pdk", {
+                    name: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    message: document.getElementById("message").value
+                    })
+                    .then(function(response) {
+                    alert("Message sent successfully!");
+                    }, function(error) {
+                    alert("Failed to send message: " + JSON.stringify(error));
+                    });
+                });
+                </script>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-8 border-t border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2025 Mudita Pachisia. All rights reserved.
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-indigo-600 transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-indigo-600 transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+    <script>feather.replace();</script>
 </body>
 </html>
